@@ -1,11 +1,15 @@
-type ModalProps =
+type ModalProps = (
   | {
       variant: "no-title";
+      buttonColor: string;
     }
   | {
       variant: "title";
       title: string;
-    };
+    }
+) & {
+  buttonColor: string;
+};
 
 /**
  * 1. How do we add a `buttonColor` prop to the `ModalProps` type that is
@@ -19,8 +23,7 @@ export const Modal = (props: ModalProps) => {
         <button
           style={{
             backgroundColor: props.buttonColor,
-          }}
-        >
+          }}>
           Click me!
         </button>
       </div>
@@ -32,8 +35,7 @@ export const Modal = (props: ModalProps) => {
         <button
           style={{
             backgroundColor: props.buttonColor,
-          }}
-        >
+          }}>
           Click me!
         </button>
       </div>
