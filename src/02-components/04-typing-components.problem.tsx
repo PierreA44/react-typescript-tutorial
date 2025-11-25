@@ -1,6 +1,17 @@
 import React from "react";
+import { string } from "zod";
 
-export const Button = (props: unknown) => {
+interface Props {
+  className: string;
+}
+/*
+          or
+export Type Props = {
+  classname : string;
+}
+*/
+
+export const Button = (props: Props) => {
   return <button className={props.className}></button>;
 };
 
